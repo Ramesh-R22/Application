@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/dark_blue">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/background"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="App Logo"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device Tracker"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
