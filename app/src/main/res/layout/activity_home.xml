@@ -9,39 +9,53 @@
     android:background="@drawable/background"
     tools:context=".HomeActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="DEVICE TRACKER"
+            android:textColor="@color/textColor"
+            android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/imageButtonContainer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/text_header"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btn_connected_devices"
                 android:layout_width="0dp"
-                android:layout_height="353dp"
+                android:layout_height="316dp"
                 android:layout_weight="1"
                 android:onClick="onConnectedDevicesClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_1" />
+                android:src="@drawable/connected_device" />
 
             <ImageButton
                 android:id="@+id/btn_add_device"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_toEndOf="@id/btn_connected_devices"
                 android:layout_weight="1"
                 android:onClick="onAddDeviceClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_1" />
+                android:src="@drawable/img_3" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/imageButtonContainer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/imageButtonContainer1"
             android:orientation="horizontal">
 
             <ImageButton
@@ -51,7 +65,7 @@
                 android:layout_weight="1"
                 android:onClick="onCalculatorClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_3" />
+                android:src="@drawable/calculator" />
 
             <ImageButton
                 android:id="@+id/btn_device_location"
@@ -60,11 +74,12 @@
                 android:layout_weight="1"
                 android:onClick="onDeviceLocationClick"
                 android:scaleType="fitCenter"
-                android:src="@drawable/location_devices" />
+                android:src="@drawable/location_devices"
+                android:layout_toEndOf="@id/btn_calculator"/>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

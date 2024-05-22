@@ -6,6 +6,16 @@
     android:background="@color/main_activity_background_color"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="DEVICE TRACKER"
+        android:textColor="@color/textColor"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/imageViewLogo"
         android:layout_width="145dp"
