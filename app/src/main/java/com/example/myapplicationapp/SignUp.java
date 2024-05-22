@@ -98,11 +98,7 @@ public class SignUp extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign up success
                             FirebaseUser user = mAuth.getCurrentUser();
-                            saveUserDataToDatabase(user.getUid(), fullName, email);
-                            Toast.makeText(SignUp.this, "Sign up successful!", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
-                            startActivity(new Intent(SignUp.this, MainActivity.class));
-                            finish();
+                            sendEmailVerification(user);
                         } else {
                             // If sign up fails, display a message to the user.
                             Toast.makeText(SignUp.this, "Sign up failed: " + task.getException().getMessage(),
@@ -113,8 +109,22 @@ public class SignUp extends AppCompatActivity {
                 });
     }
 
-    private void saveUserDataToDatabase(String userId, String fullName, String email) {
-        User user = new User(userId, fullName, email);
-        databaseReference.child(userId).setValue(user);
+    private void sendEmailVerification(FirebaseUser user) {
+        user.sendEmailVerification()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUp.this, "Sign up successful! Please verify your email.",
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignUp.this, MainActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(SignUp.this, "Failed to send verification email.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

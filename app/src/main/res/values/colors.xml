@@ -9,4 +9,14 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="textColor">#000000</color>
+    <color name="textColorHint">#757575</color>
+    <color name="splash_background_color">#009688</color>
+    <color name="main_activity_background_color">#FFFFFF</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#757575</color>
+    <color name="main_activity_bg_start">#64B5F6</color>
+    <color name="main_activity_bg_end">#2196F3</color>
+    <color name="signup_activity_bg">#F5F5F5</color>
 </resources>

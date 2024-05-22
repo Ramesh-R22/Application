@@ -55,4 +55,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    public void onConnectedDevicesClick(View view) {
+    }
 }

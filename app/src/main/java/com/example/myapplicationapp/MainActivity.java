@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextPassword;
     Button buttonLogin;
     TextView textViewSignUp;
+    TextView forgotPasswordTextView;
 
     private FirebaseAuth mAuth;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.password);
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewSignUp = findViewById(R.id.textViewSignUp);
+        forgotPasswordTextView = findViewById(R.id.forgotPassword);
         overridePendingTransition(R.anim.scale_in,R.anim.slide_up);
         // Apply animation to views
         animateViews();
@@ -56,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SignUp.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class));
             }
         });
     }
